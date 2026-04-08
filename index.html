@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <title>ฟอร์มแจ้งงานช่าง</title>
+  
+  
+  
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+   body {
+  font-family: 'Sarabun', sans-serif;
+  background-image: url('img/pbc1.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1000px auto; 
+  background-attachment: fixed; 
+  background-color: rgba(108, 85, 134, 0.76); 
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+  color: #42404096;
+}
+
+
+    h2 {
+      color: #fafafa8f;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      color: #f8f8f8;
+      font-weight: 600;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 20px;
+      margin-top: 5px;
+      border: 3px solid #3b3a3fd0;
+      border-radius: 10px;
+      
+      background-color: #fcf9f9ea;
+      box-sizing: border-box;
+      font-family: 'Sarabun', sans-serif;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #7b1fa2;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #6a1b9a;
+    }
+
+    #brandOther {
+      margin-top: 10px;
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 10px;
+      }
+    }
+  
+
+
+    .hidden { display: none; }
+    label { display: block; margin-top: 1em; }
+    input, select, textarea { width: 100%; padding: 8px; margin-top: 5px; }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+  <h2>แบบฟอร์มส่งข้อมูลM&S</h2>
+  <form id="customForm">
+    <label for="requester">ผู้ Request</label>
+    <select id="requester" required>
+      <option value="">-- เลือก --</option>
+      <option value="Customer">Customer</option>
+      <option value="SALES แพลนเนทบาร์โค้ด">SALES แพลนเนทบาร์โค้ด</option>
+      <option value="Services Team">Services Team</option>
+    </select>
+
+    <div class="form-grid">
+      <div id="group-company">
+        <label for="company">ชื่อบริษัท</label>
+        <input type="text" id="company" />
+      </div>
+
+      
+
+      <div id="group-employeeName">
+        <label for="employeeName">ชื่อพนักงาน</label>
+        <input type="text" id="employeeName" />
+      </div>
+
+      <div id="group-operator">
+        <label for="operator">ผู้ปฏิบัติงาน</label>
+        <select id="operator">
+          <option value="">-- เลือก --</option>
+          <option value="นายฤทธิรงค์  เสภี">นายฤทธิรงค์  เสภี</option>
+          <option value="นายอนรรฆ  จันทร์พูล">นายอนรรฆ  จันทร์พูล</option>
+          <option value="นายอาลี  สูหลง">นายอาลี  สูหลง</option>
+          <option value="นายณรงค์  โตน้อย">นายณรงค์  โตน้อย</option>
+          <option value="นายธนทัต  ปัณฑยางกูร">นายธนทัต  ปัณฑยางกูร</option>
+        </select>
+      </div>
+
+      <div id="group-serviceType">
+        <label for="serviceType">ประเภทบริการ</label>
+        <select id="serviceType">
+          <option value="">-- เลือก --</option>
+          <option value="งานซ่อม">งานซ่อม</option>
+          <option value="Support">Support</option>
+          <option value="เตรียมเครื่อง">เตรียมเครื่อง</option>
+          <option value="QC คืนโกดัง">QC คืนโกดัง</option>
+          <option value="Onsite">Onsite</option>
+        </select>
+      </div>
+
+      <div id="group-productGroup">
+        <label for="productGroup">Product Group</label>
+        <select id="productGroup">
+          <option value="">-- เลือก --</option>
+          <option value="Mobility/PDA">Mobility/PDA</option>
+          <option value="Handheld/Scanner">Handheld/Scanner</option>
+          <option value="Industrial">Industrial</option>
+          <option value="Desktop">Desktop</option>
+          <option value="Printer Mobile">Printer Mobile</option>
+          <option value="Receipt Printer">Receipt Printer</option>
+          <option value="Accessories">Accessories</option>
+        </select>
+      </div>
+
+      <div id="group-brand">
+        <label for="brand">Brand</label>
+        <select id="brand" required>
+          <option value="">-- เลือก --</option>
+          <option value="TSC">TSC</option>
+          <option value="ZEBRA">ZEBRA</option>
+          <option value="HONEYWELL">HONEYWELL</option>
+          <option value="CIPHERLAB">CIPHERLAB</option>
+          <option value="IDA">IDA</option>
+          <option value="SNBC">SNBC</option>
+          <option value="อื่นๆ">อื่นๆ</option>
+        </select>
+        <input type="text" id="brandOther" placeholder="กรุณากรอกยี่ห้อเอง" style="display: none;" />
+      </div>
+
+      <div id="group-model">
+        <label for="model">Model</label>
+        <input type="text" id="model" />
+      </div>
+
+      <div id="group-quantity">
+        <label for="quantity">จำนวนเครื่อง</label>
+        <input type="number" id="quantity" min="1" />
+      </div>
+
+      <div id="group-problem">
+        <label for="problem">ปัญหาที่พบ</label>
+        <select id="problem">
+          <option value="">-- เลือก --</option>
+          <option value="ทางด้านตัวเครื่อง">ทางด้านตัวเครื่อง</option>
+          <option value="ทางด้าน Software">ทางด้าน Software</option>
+        </select>
+      </div>
+      
+      <div id="group-initialSymptom">
+        <label for="initialSymptom">อาการเบื้องต้น</label>
+        <input type="text" id="initialSymptom" />
+      </div>
+      <div id="group-contact">
+        <label for="contact">ติดต่อ/เพิ่มเติม</label>
+        <input type="text" id="contact" />
+      </div>
+
+
+      <div id="group-status">
+        <label for="status">Status</label>
+        <select id="status">
+          <option value="">-- เลือก --</option>
+          <option value="Pending">Pending</option>
+          <option value="Completed">Completed</option>
+        </select>
+      </div>
+
+      <div id="group-solution">
+        <label for="solution">แนวทางการแก้ปัญหา</label>
+        <input type="text" id="solution" />
+      </div>
+    </div>
+
+   
+
+
+    <button type="submit">Summit</button>
+  </form>
+</div>
+  <!-- Script ที่นุ๊กให้ไว้ -->
+  <script>
+   
+    document.addEventListener('DOMContentLoaded', function () {
+      const requester = document.getElementById('requester');
+      const brand = document.getElementById('brand');
+      const brandOther = document.getElementById('brandOther');
+      const groups = {
+      company: document.getElementById('group-company'),
+      
+      employeeName: document.getElementById('group-employeeName'),
+      operator: document.getElementById('group-operator'),
+      serviceType: document.getElementById('group-serviceType'),
+      productGroup: document.getElementById('group-productGroup'),
+      brand: document.getElementById('group-brand'),
+      model: document.getElementById('group-model'),
+      quantity: document.getElementById('group-quantity'),
+      problem: document.getElementById('group-problem'),
+      initialSymptom: document.getElementById('group-initialSymptom'),
+      status: document.getElementById('group-status'),
+      solution: document.getElementById('group-solution'),
+      contact: document.getElementById('group-contact'),
+      };
+
+      function updateVisibility() {
+        Object.values(groups).forEach(group => group.classList.add('hidden'));
+        const value = requester.value;
+        if (value === 'Customer') {
+          ['company', 'brand', 'model', 'quantity', 'problem', 'initialSymptom','contact', 'status']
+            .forEach(id => groups[id].classList.remove('hidden'));
+        } else if (value === 'SALES แพลนเนทบาร์โค้ด') {
+          ['company', 'employeeName', 'serviceType', 'productGroup', 'brand', 'model', 'quantity', 'problem', 'initialSymptom','contact', 'status']
+            .forEach(id => groups[id].classList.remove('hidden'));
+        } else if (value === 'Services Team') {
+          ['company', 'operator', 'serviceType', 'productGroup', 'brand', 'model', 'quantity', 'problem', 'initialSymptom', 'status','contact', 'solution']
+            .forEach(id => groups[id].classList.remove('hidden'));
+        }
+      }
+
+      requester.addEventListener('change', updateVisibility);
+      updateVisibility();
+
+      brand.addEventListener('change', () => {
+        brandOther.style.display = brand.value === 'อื่นๆ' ? 'block' : 'none';
+      });
+
+      document.getElementById('customForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const data = {
+          company: document.getElementById('company').value,
+        
+          requester: requester.value,
+          employeeName: document.getElementById('employeeName').value,
+          operator: document.getElementById('operator').value,
+          serviceType: document.getElementById('serviceType').value,
+          productGroup: document.getElementById('productGroup').value,
+          brand: brand.value === 'อื่นๆ' ? brandOther.value : brand.value,
+          model: document.getElementById('model').value,
+          quantity: document.getElementById('quantity').value,
+          problem: document.getElementById('problem').value,
+          initialSymptom: document.getElementById('initialSymptom').value,
+          status: document.getElementById('status').value,
+          solution: document.getElementById('solution').value,
+          contact: document.getElementById('contact').value,
+        };
+
+        fetch("https://script.google.com/macros/s/AKfycbzpalmDja5up47tuiTIM8eMgAA_xfZC7hwMueAvsfiCpylobuKpnbSXn5HLckWEx-o1/exec", {
+          method: "POST",
+          body: new URLSearchParams(data),
+        })
+          .then(response => response.text())
+          .then(result => {
+            alert("ส่งข้อมูลเรียบร้อยแล้ว");
+            document.getElementById("customForm").reset();
+            brandOther.style.display = "none";
+            updateVisibility();
+          })
+          .catch(error => alert("เกิดข้อผิดพลาดในการส่งข้อมูล"));
+      });
+    });
+  
+  </script>
+</body>
+</html>
